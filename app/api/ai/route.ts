@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Type definitions
-type ToolType = 'caption' | 'idea' | 'ad_title';
+type ToolType = 'caption' | 'idea' | 'ad_title' | 'bio';
 
 interface AIRequest {
   type: ToolType;
@@ -38,6 +38,13 @@ function generateMockResults(request: AIRequest): string[] {
       `💎 ${topic}: ${tone} Solution untuk Masalah Kamu`,
       `🎯 Kenapa ${topic} ini ${tone} banget? Cek Sekarang!`,
       `✨ ${topic} - ${tone} Way untuk Hasil Maksimal`,
+    ],
+    bio: [
+      `👋 ${topic} Enthusiast | Sharing tips ${tone} setiap hari ✨ | Klik link di bawah 👇`,
+      `🚀 Helping you with ${topic} | ${tone} Vibes Only ✨ | DM for collab 📩`,
+      `✨ All things ${topic} | ${tone} Life | Join our community 👇`,
+      `🎓 Belajar ${topic} bareng aku! | Gaya ${tone} & Seru | Follow for more ⚡`,
+      `💡 ${topic} Expert | ${tone} approach to life | Business Inquiries 📧`,
     ],
   };
 
@@ -76,6 +83,7 @@ async function generateWithOpenAI(request: AIRequest): Promise<string[]> {
     caption: `Generate 5 engaging social media captions for ${request.platform} about "${request.topic}" with a ${request.tone} tone in ${request.language}. Make them creative and attention-grabbing.`,
     idea: `Generate 5 creative content ideas for ${request.platform} about "${request.topic}" with a ${request.tone} tone in ${request.language}. Focus on ideas that would engage viewers.`,
     ad_title: `Generate 5 compelling advertising titles/hooks about "${request.topic}" with a ${request.tone} tone in ${request.language}. Make them click-worthy and persuasive.`,
+    bio: `Generate 5 professional and engaging social media bios for ${request.platform} about "${request.topic}" with a ${request.tone} tone in ${request.language}. Use emojis and make it structured.`,
   };
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -130,6 +138,7 @@ async function generateWithGemini(request: AIRequest): Promise<string[]> {
     caption: `Generate 5 engaging social media captions for ${request.platform} about "${request.topic}" with a ${request.tone} tone in ${request.language}. Make them creative and attention-grabbing. Return only the captions, numbered 1-5.`,
     idea: `Generate 5 creative content ideas for ${request.platform} about "${request.topic}" with a ${request.tone} tone in ${request.language}. Focus on ideas that would engage viewers. Return only the ideas, numbered 1-5.`,
     ad_title: `Generate 5 compelling advertising titles/hooks about "${request.topic}" with a ${request.tone} tone in ${request.language}. Make them click-worthy and persuasive. Return only the titles, numbered 1-5.`,
+    bio: `Generate 5 professional and engaging social media bios for ${request.platform} about "${request.topic}" with a ${request.tone} tone in ${request.language}. Use emojis and make it structured. Return only the bios, numbered 1-5.`,
   };
 
   const response = await fetch(
@@ -183,9 +192,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!['caption', 'idea', 'ad_title'].includes(body.type)) {
+    if (!['caption', 'idea', 'ad_title', 'bio'].includes(body.type)) {
       return NextResponse.json(
-        { error: 'Invalid type. Must be caption, idea, or ad_title' },
+        { error: 'Invalid type. Must be caption, idea, ad_title, or bio' },
         { status: 400 }
       );
     }

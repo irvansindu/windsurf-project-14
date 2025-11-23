@@ -7,12 +7,12 @@ A modern web application for content creators featuring a curated toolbox of use
 - **Creator Toolbox**: Curated list of useful tools with filtering by category
 - **Creator Tools**:
   - 📅 **Posting Schedule Planner** - Find best times to post on social media platforms
-  - 🔍 **Competitor Analyzer** - Compare your channel performance with competitors
   - 💰 **Monetization Calculator** - Estimate earnings from YouTube, Instagram, TikTok
   - 📝 **Script Writer** - Write scripts for video, podcast, and livestream
   - #️⃣ **Hashtag Generator** - Generate trending hashtags for social media
   - 📊 **Analytics Checker** - Analyze content performance and get insights
   - 🎬 **Video Editor Tools** - Collection of video editing resources
+  - 📱 **QR Code Generator** - Generate custom QR codes for your links
 - **AI Mini-Tools**:
   - Caption Generator
   - Content Idea Generator
@@ -109,7 +109,7 @@ const tools: Tool[] = [
 
 ## 📁 Project Structure
 
-```
+```text
 windsurf-project-14/
 ├── app/
 │   ├── api/
@@ -120,8 +120,6 @@ windsurf-project-14/
 │   ├── tools/                    # Internal creator tools
 │   │   ├── posting-schedule/
 │   │   │   └── page.tsx          # Posting Schedule Planner
-│   │   ├── competitor-analyzer/
-│   │   │   └── page.tsx          # Competitor Analyzer
 │   │   ├── monetization-calculator/
 │   │   │   └── page.tsx          # Monetization Calculator
 │   │   ├── script-writer/
@@ -130,8 +128,10 @@ windsurf-project-14/
 │   │   │   └── page.tsx          # Hashtag Generator
 │   │   ├── analytics-checker/
 │   │   │   └── page.tsx          # Analytics Checker
-│   │   └── video-editor/
-│   │       └── page.tsx          # Video Editor Tools
+│   │   ├── video-editor/
+│   │   │   └── page.tsx          # Video Editor Tools
+│   │   └── qr-generator/
+│   │       └── page.tsx          # QR Code Generator
 │   ├── layout.tsx                # Root layout with navbar & footer
 │   ├── page.tsx                  # Home page (toolbox)
 │   └── globals.css               # Global styles
@@ -166,23 +166,23 @@ colors: {
 
 ## 🚢 Deployment
 
-### Build for production:
+### Build for production
 ```bash
 npm run build
 ```
 
-### Start production server:
+### Start production server
 ```bash
 npm start
 ```
 
-### Deploy to Vercel:
+### Deploy to Vercel
 1. Push your code to GitHub
 2. Import project in [Vercel](https://vercel.com/)
 3. Add environment variables in Vercel dashboard
 4. Deploy!
 
-### Deploy to Netlify:
+### Deploy to Netlify
 1. Push your code to GitHub
 2. Import project in [Netlify](https://netlify.com/)
 3. Build command: `npm run build`

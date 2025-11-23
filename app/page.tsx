@@ -26,21 +26,13 @@ const tools: Tool[] = [
   {
     id: "2",
     name: "Posting Schedule Planner",
-    description: "Temukan waktu terbaik untuk posting konten di berbagai platform sosial media.",
+    description: "Temukan waktu posting terbaik untuk konten Anda di berbagai platform social media.",
     url: "/tools/posting-schedule",
     tags: ["Schedule", "Planning", "Analytics"],
     category: "Research",
   },
   {
     id: "3",
-    name: "Competitor Analyzer",
-    description: "Bandingkan performa channel Anda dengan kompetitor dan temukan peluang growth.",
-    url: "/tools/competitor-analyzer",
-    tags: ["Analytics", "Competitor", "Strategy"],
-    category: "Research",
-  },
-  {
-    id: "4",
     name: "Analytics Checker",
     description: "Analisis performa konten Anda dan dapatkan insight untuk meningkatkan engagement.",
     url: "/tools/analytics-checker",
@@ -48,7 +40,7 @@ const tools: Tool[] = [
     category: "Research",
   },
   {
-    id: "5",
+    id: "4",
     name: "Monetization Calculator",
     description: "Hitung estimasi pendapatan dari YouTube, Instagram, TikTok berdasarkan views dan followers.",
     url: "/tools/monetization-calculator",
@@ -56,7 +48,7 @@ const tools: Tool[] = [
     category: "Research",
   },
   {
-    id: "6",
+    id: "5",
     name: "Script Writer",
     description: "Bantu tulis script untuk video atau podcast dengan template yang sudah terbukti.",
     url: "/tools/script-writer",
@@ -64,7 +56,7 @@ const tools: Tool[] = [
     category: "Writing",
   },
   {
-    id: "7",
+    id: "6",
     name: "Hashtag Generator",
     description: "Temukan hashtag yang tepat untuk meningkatkan reach konten Anda di media sosial.",
     url: "/tools/hashtag-generator",
@@ -72,11 +64,19 @@ const tools: Tool[] = [
     category: "Research",
   },
   {
-    id: "8",
+    id: "7",
     name: "Video Editor Tools",
     description: "Koleksi tools online untuk edit video dengan cepat tanpa software berat.",
     url: "/tools/video-editor",
     tags: ["Video", "Editing", "Production"],
+    category: "Design",
+  },
+  {
+    id: "8",
+    name: "QR Code Generator",
+    description: "Buat QR Code custom untuk link social media, website, atau teks apapun. Download gratis!",
+    url: "/tools/qr-generator",
+    tags: ["QR Code", "Marketing", "Tools"],
     category: "Design",
   },
 ];

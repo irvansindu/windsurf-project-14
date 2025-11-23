@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type ToolType = 'caption' | 'idea' | 'ad_title';
+type ToolType = 'caption' | 'idea' | 'ad_title' | 'bio';
 
 interface FormData {
   topic: string;
@@ -46,6 +46,11 @@ export default function AIToolsPage() {
       title: 'Ad Title / Hook Generator',
       description: 'Buat judul iklan atau hook yang menarik perhatian audience',
       placeholder: 'Contoh: promo diskon gadget, kursus online, jasa desain',
+    },
+    bio: {
+      title: 'Social Bio Generator',
+      description: 'Buat bio profil yang profesional, aesthetic, dan engaging',
+      placeholder: 'Contoh: Digital Marketer, Food Blogger, Travel Enthusiast',
     },
   };
 
