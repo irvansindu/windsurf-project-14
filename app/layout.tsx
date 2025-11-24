@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,15 @@ export default function RootLayout({
 
   return (
     <html lang="id">
+      <head />
       <body className="min-h-screen flex flex-col">
+        <Script
+          id="adsense-script"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3604122645141902"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
         {/* Navigation Bar */}
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
