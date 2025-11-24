@@ -17,7 +17,12 @@ export default function RootLayout({
 
   return (
     <html lang="id">
-      <head />
+      <head>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-3604122645141902"
+        />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Script
           id="adsense-script"
